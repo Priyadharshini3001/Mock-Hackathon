@@ -1,0 +1,30 @@
+
+package com.sweetshop.tests;
+
+import com.sweetshop.base.BaseTest;
+import com.sweetshop.pages.LoginPage;
+import org.testng.annotations.DataProvider;
+import org.testng.annotations.Test;
+
+    public class LoginTest extends BaseTest {
+
+        @DataProvider(name = "loginData")
+        public Object[][] loginData() {
+
+            return new Object[][]{
+
+                    {"test@test.com", "test123"},
+                    {"wrong@test.com", "wrong123"}
+            };
+        }
+
+        @Test(dataProvider = "loginData")
+        public void loginTest(String user, String pass) {
+
+            LoginPage lp = new LoginPage(driver);
+
+            lp.login(user, pass);
+        }
+    }
+    
+

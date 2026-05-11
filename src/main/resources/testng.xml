@@ -1,0 +1,23 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+<suite name="SweetCart Suite">
+
+    <listeners>
+
+        <listener class-name="com.sweetshop.Listeners.TestListener"/>
+
+    </listeners>
+
+    <test name="Automation Tests">
+
+        <classes>
+
+            <class name="com.sweetshop.tests.LoginTest"/>
+
+            <class name="com.sweetshop.tests.SweetsTest"/>
+
+        </classes>
+
+    </test>
+
+</suite>
