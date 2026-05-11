@@ -5,12 +5,22 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
 
 import java.time.Duration;
 
 public class BaseTest{
 
     public static WebDriver driver;
+    @Test
+    public void addToBasket() {
+        System.out.println("Product added to basket");
+    }
+
+    @Test
+    public void removeFromBasket() {
+        System.out.println("Product removed");
+    }
 
     @BeforeMethod
     public void setup(){
@@ -34,5 +44,6 @@ public class BaseTest{
 
             driver.quit();
         }
+
     }
 }

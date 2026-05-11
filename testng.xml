@@ -1,20 +1,16 @@
-<?xml version="1.0" encoding="UTF-8"?>
-
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 
-<suite name="SweetShopSuite">
+<suite name="SweetShop Suite">
 
-    <listeners>
-        <listener class-name="com.sweetshop.listeners.TestListener"/>
-    </listeners>
-
-    <test name="SweetShopTests">
+    <test name="All Modules Test">
 
         <classes>
 
             <class name="com.sweetshop.tests.LoginTest"/>
-
-            <class name="com.sweetshop.tests.SweetsTest"/>
+            <class name="com.sweetshop.tests.ProductTest"/>
+            <class name="com.sweetshop.tests.BasketTest"/>
+            <class name="com.sweetshop.tests.AccountTest"/>
+            <class name="com.sweetshop.tests.NavigationTest"/>
 
         </classes>
 

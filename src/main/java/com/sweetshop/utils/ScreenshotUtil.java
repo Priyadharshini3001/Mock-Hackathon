@@ -11,31 +11,31 @@ import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-    public class ScreenshotUtil {
+public class ScreenshotUtil {
 
-        public static String captureScreenshot(String testName) {
+    public static String captureScreenshot(String testName) {
 
-            File src =
-                    ((TakesScreenshot) BaseTest.driver)
-                            .getScreenshotAs(OutputType.FILE);
+        File src =
+                ((TakesScreenshot) BaseTest.driver)
+                        .getScreenshotAs(OutputType.FILE);
 
-            String path =
-                    "screenshots/" +
-                            testName +
-                            "_" +
-                            new SimpleDateFormat("yyyyMMddHHmmss")
-                                    .format(new Date())
-                            + ".png";
+        String path =
+                "screenshots/" +
+                        testName +
+                        "_" +
+                        new SimpleDateFormat("yyyyMMddHHmmss")
+                                .format(new Date())
+                        + ".png";
 
-            try {
+        try {
 
-                FileUtils.copyFile(src, new File(path));
+            FileUtils.copyFile(src, new File(path));
 
-            } catch (IOException e) {
+        } catch (IOException e) {
 
-                e.printStackTrace();
-            }
-
-            return path;
+            e.printStackTrace();
         }
+
+        return path;
     }
+}

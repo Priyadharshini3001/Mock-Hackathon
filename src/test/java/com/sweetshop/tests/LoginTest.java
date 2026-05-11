@@ -18,6 +18,10 @@ public class LoginTest extends BaseTest {
                 {"wrong@test.com", "wrong"}
         };
     }
+    @Test
+    public void sampleTest() {
+        System.out.println("running");
+    }
 
     @Test(dataProvider = "loginData")
     public void loginTest(String user, String pass) {
