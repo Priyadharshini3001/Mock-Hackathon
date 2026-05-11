@@ -6,7 +6,7 @@ import com.sweetshop.pages.LoginPage;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
-    public class LoginTest extends BaseTest {
+public class LoginTest extends BaseTest {
 
         @DataProvider(name = "loginData")
         public Object[][] loginData() {
@@ -26,5 +26,3 @@ import org.testng.annotations.Test;
             lp.login(user, pass);
         }
     }
-    
-

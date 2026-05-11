@@ -1,4 +1,4 @@
-package com.krce.Utils;
+package com.sweetshop.utils;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;

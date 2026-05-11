@@ -1,4 +1,4 @@
-package com.krce.Utils;
+package com.sweetshop.utils;
 
 
 import com.sweetshop.base.BaseTest;

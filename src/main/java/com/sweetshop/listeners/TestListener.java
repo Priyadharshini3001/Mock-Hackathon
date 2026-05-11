@@ -12,10 +12,6 @@ public class TestListener implements ITestListener {
         ScreenshotUtil.captureScreenshot(
                 result.getName()
         );
-
-        System.out.println(
-                "Test Failed : " + result.getName()
-        );
     }
 
     @Override

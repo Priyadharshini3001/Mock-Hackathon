@@ -21,6 +21,8 @@ public class BasePage {
 
     public void waitForElement(WebElement element) {
 
-        wait.until(ExpectedConditions.visibilityOf(element));
+        wait.until(
+                ExpectedConditions.visibilityOf(element)
+        );
     }
 }

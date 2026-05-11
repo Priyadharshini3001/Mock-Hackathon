@@ -1,4 +1,4 @@
-package com.krce.Utils;
+package com.sweetshop.utils;
 
 import java.io.FileInputStream;
 import java.io.IOException;
