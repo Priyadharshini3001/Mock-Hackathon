@@ -16,18 +16,14 @@ public class BaseTest {
     @BeforeMethod
     public void setup() {
 
-        WebDriverManager.chromedriver().setup();
+        WebDriverManager.chromedriver().clearDriverCache().setup();
 
         driver = new ChromeDriver();
 
         driver.manage().window().maximize();
 
         driver.manage().timeouts().implicitlyWait(
-                Duration.ofSeconds(
-                        Integer.parseInt(
-                                ConfigReader.getProperty("timeout")
-                        )
-                )
+                Duration.ofSeconds(10)
         );
 
         driver.get(

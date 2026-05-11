@@ -1,32 +1,27 @@
 package com.sweetshop.pages;
 
-import com.sweetshop.base.BasePage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-public class LoginPage extends BasePage {
+public class LoginPage {
 
     WebDriver driver;
 
-    By loginLink = By.linkText("Login");
-    By email = By.id("exampleInputEmail1");
-    By password = By.id("exampleInputPassword1");
-    By loginBtn = By.xpath("//button[contains(text(),'Login')]");
-
     public LoginPage(WebDriver driver) {
-
-        super(driver);
-
         this.driver = driver;
     }
 
-    public void login(String user, String pass) {
+    // Locators
+    By email = By.xpath("//input[@type='email']");
+    By password = By.xpath("//input[@type='password']");
+    By loginBtn = By.xpath("//button[contains(text(),'Login')]");
 
-        driver.findElement(loginLink).click();
+    // Login method
+    public void login(String userEmail, String userPassword) {
 
-        driver.findElement(email).sendKeys(user);
+        driver.findElement(email).sendKeys(userEmail);
 
-        driver.findElement(password).sendKeys(pass);
+        driver.findElement(password).sendKeys(userPassword);
 
         driver.findElement(loginBtn).click();
     }
