@@ -13,11 +13,8 @@ public class ProductTest extends BaseTest {
 
     @Test
     public void verifyProductList() {
-
         driver.get("https://sweetshop.netlify.app/sweets");
-
         int productCount = driver.findElements(By.cssSelector(".card")).size();
-
         Assert.assertTrue(productCount > 0, "No products displayed");
     }
 

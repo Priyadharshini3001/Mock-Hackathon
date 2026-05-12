@@ -4,7 +4,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
 import java.time.Duration;
 
 public class SweetsPage {
@@ -18,16 +17,13 @@ public class SweetsPage {
     }
 
     public void openSweets() {
-
         driver.get("https://sweetshop.netlify.app/sweets");
-
         wait.until(ExpectedConditions.visibilityOfElementLocated(
                 By.xpath("//div[contains(@class,'card')]")
         ));
     }
 
     public int getProductCount() {
-
         return driver.findElements(
                 By.xpath("//div[contains(@class,'card')]")
         ).size();

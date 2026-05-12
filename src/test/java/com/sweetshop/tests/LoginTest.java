@@ -11,9 +11,7 @@ public class LoginTest extends BaseTest {
 
     @DataProvider(name = "loginData")
     public Object[][] loginData() {
-
         return new Object[][]{
-
                 {"test@test.com", "test"},
                 {"wrong@test.com", "wrong"}
         };
@@ -25,11 +23,8 @@ public class LoginTest extends BaseTest {
 
     @Test(dataProvider = "loginData")
     public void loginTest(String user, String pass) {
-
         LoginPage lp = new LoginPage(driver);
-
         lp.goToLoginPage();
-
         lp.login(user, pass);
     }
 }
