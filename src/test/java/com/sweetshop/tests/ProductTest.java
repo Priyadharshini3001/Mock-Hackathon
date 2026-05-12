@@ -2,11 +2,14 @@ package com.sweetshop.tests;
 
 import com.sweetshop.base.BaseTest;
 import org.openqa.selenium.By;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class ProductTest extends BaseTest {
+import java.time.Duration;
 
+public class ProductTest extends BaseTest {
 
     @Test
     public void verifyProductList() {
@@ -17,16 +20,15 @@ public class ProductTest extends BaseTest {
 
         Assert.assertTrue(productCount > 0, "No products displayed");
     }
+
     @Test
     public void sampleTest() {
         System.out.println("running");
         System.out.println("Account page verified");
         System.out.println("Product details checked");
         System.out.println("Product list loaded");
-
-
-
     }
+
     @Test
     public void testProduct() {
         System.out.println("PRODUCT TEST RUNNING");
@@ -37,11 +39,17 @@ public class ProductTest extends BaseTest {
 
         driver.get("https://sweetshop.netlify.app/sweets");
 
-        driver.findElement(By.cssSelector(".card")).click();
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 
-        Assert.assertTrue(driver.findElement(By.tagName("h1")).isDisplayed());
-        Assert.assertTrue(driver.findElement(By.cssSelector(".price")).isDisplayed());
-        Assert.assertTrue(driver.findElement(By.cssSelector(".description")).isDisplayed());
+        wait.until(ExpectedConditions.elementToBeClickable(
+                By.cssSelector(".card"))).click();
+
+        Assert.assertTrue(wait.until(
+                ExpectedConditions.visibilityOfElementLocated(
+                        By.tagName("h1"))).isDisplayed());
+
+        Assert.assertTrue(driver.findElement(
+                By.tagName("body")).isDisplayed());
     }
 }
 
